@@ -41,8 +41,8 @@ def dg_get(fm):
 
 from transformers import BertTokenizer,TFBertModel
 from sklearn.metrics.pairwise import cosine_similarity  # 余弦距离
-tokenizer = BertTokenizer.from_pretrained(r'C:\Users\LJM\PycharmProjects\pythonProject5\中文阅读理解\bert-base-chinese')
-model=TFBertModel.from_pretrained(r'C:\Users\LJM\PycharmProjects\pythonProject5\中文阅读理解\bert-base-chinese')
+tokenizer = BertTokenizer.from_pretrained(r'./bert-base-chinese')
+model=TFBertModel.from_pretrained(r'./bert-base-chinese')
 def cos_similar(text1,text2):
     in1=tokenizer(text1,padding=True,truncation=True, max_length=500,return_tensors='tf')
     in2=tokenizer(text2,padding=True,truncation=True, max_length=500,return_tensors='tf')
@@ -87,7 +87,7 @@ with st.form("参数输入"):
       A=pd.read_excel(A)   
     else:
         st.write('')
-    yq=pd.read_excel(r'C:\Users\LJM\PycharmProjects\pythonProject5\中文阅读理解\2024.bert学习\评分要点拆解.xlsx')
+    yq=pd.read_excel(r'./评分要点拆解.xlsx')
     st.write(yq)
     # 创建文件上传组件
     st.subheader('上传论文pdf文件：')
