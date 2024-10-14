@@ -1,6 +1,8 @@
 streamlit
 matplotlib
-transformers==4.39.1
+transformers
+tensorflow
+tf-keras
 pandas
 PyPDF2
 pdfplumber
